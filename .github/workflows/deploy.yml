@@ -18,11 +18,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
       - name: Build Docker Image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/upskilling-repo .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/belajar-devops .
 
       - name: Push Image to Docker Hub
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/upskilling-repo
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/belajar-devops
